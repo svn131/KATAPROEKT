@@ -66,7 +66,7 @@
 
 ![](src/main/resources/static/images/git_tutor/git_premerge_merge_dev.png)
 
-3. ---**ВАЖНО**--- Убедитесь что проект собирается и запускается.
+### 3. **---**ВАЖНО**--- Убедитесь что проект собирается и запускается.**
 
 4. Далее **Commit...** и **Push...**, чтобы добавить её в общий репозиторий.
 
@@ -104,7 +104,6 @@ ReadOnlyService (ReadOnlyServiceImpl), ReadWriteService (ReadWriteServiceImpl).
 - **linkSite** - ссылка на сайт;
 - **linkGitHub** - ссылка на github;
 - **linkVk** - ссылка на страницу во Вконтакте;
-- **reputationCount** - счетчик репутации;
 - **isEnabled** - отметка, что учетная запись не заблокирована;
 - **image** - фото пользователя;
 
