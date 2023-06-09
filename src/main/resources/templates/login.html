@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="html__responsive html__unpinned-leftnav" lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Войти - Stack Overflow на русском</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Shared/stacks.css?v=73d389de9f03">
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/ru/primary.css?v=0b9a9199fbc0">
+
+</head>
+<body class="universal-auth-page unified-theme floating-content">
+
+<div class="container"></div>
+
+<script type="text/javascript" src="/js/sidebar.js"></script>
+<script type="text/javascript" src="/js/header.js"></script>
+<script type="text/javascript" src="/js/footer.js"></script>
+
+<header class="s-topbar ps-fixed t0 l0 js-top-bar">
+    <div class="s-topbar--container">
+        <a href="#" class="s-topbar--menu-btn js-left-sidebar-toggle" role="menuitem" aria-haspopup="true" aria-controls="left-sidebar" aria-expanded="false"><span></span></a>
+        <div class="topbar-dialog leftnav-dialog js-leftnav-dialog dno">
+            <div class="left-sidebar js-unpinned-left-sidebar" data-can-be="left-sidebar" data-is-here-when="sm md lg"></div>
+        </div>
+        <a href="" class="s-topbar--logo js-gps-track"
+           data-gps-track="top_nav.click({is_current:false, location:22, destination:8})">
+            <span class="-img _glyph">Stack Overflow &#x43D;&#x430; &#x440;&#x443;&#x441;&#x441;&#x43A;&#x43E;&#x43C;</span>
+        </a>
+
+
+        <form id="search" role="search" action=/search class="s-topbar--searchbar js-searchbar " autocomplete="off">
+            <div class="s-topbar--searchbar--input-group">
+                <input name="q"
+                       type="text"
+                       role="combobox"
+                       placeholder="&#x41F;&#x43E;&#x438;&#x441;&#x43A;..."
+                       value=""
+                       autocomplete="off"
+                       maxlength="240"
+                       class="s-input s-input__search js-search-field "
+                       aria-label="&#x41F;&#x43E;&#x438;&#x441;&#x43A;"
+                       aria-controls="top-search"
+                       data-controller="s-popover"
+                       data-action="focus->s-popover#show"
+                       data-s-popover-placement="bottom-start" />
+                <svg aria-hidden="true" class="s-input-icon s-input-icon__search svg-icon iconSearch" width="18" height="18"  viewBox="0 0 18 18"><path  d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"/></svg>
+                <div class="s-popover p0 wmx100 wmn4 sm:wmn-initial js-top-search-popover" id="top-search" role="menu">
+                    <div class="s-popover--arrow"></div>
+                    <div class="js-spinner p24 d-flex ai-center jc-center d-none">
+                        <div class="s-spinner s-spinner__sm fc-orange-400">
+                            <div class="v-visible-sr">Loading&#x2026;</div>
+                        </div>
+                    </div>
+
+                    <span class="v-visible-sr js-screen-reader-info"></span>
+                    <div class="js-ac-results overflow-y-auto hmx3 d-none"></div>
+
+                    <div class="js-search-hints" aria-describedby="Tips for searching"></div>
+                </div>
+            </div>
+        </form>
+
+        <nav class="h100 ml-auto overflow-x-auto pr12">
+            <ol class="s-topbar--content" role="menubar">
+
+                <li role="none">
+                    <a href="/help" class="s-topbar--item js-help-button" role="menuitem" title="&#x421;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430; &#x438; &#x43F;&#x440;&#x43E;&#x447;&#x438;&#x435; &#x440;&#x435;&#x441;&#x443;&#x440;&#x441;&#x44B;" aria-haspopup="true" aria-controls="topbar-help-dialog"
+                       data-ga="[&quot;top navigation&quot;,&quot;help menu click&quot;,null,null,null]"><svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18"  viewBox="0 0 18 18"><path  d="M9 1C4.64 1 1 4.64 1 9c0 4.36 3.64 8 8 8 4.36 0 8-3.64 8-8 0-4.36-3.64-8-8-8Zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23ZM11.77 8c-.59.66-1.78 1.09-2.05 1.97a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.06-1.35.66-2.2 1.83-2.88.39-.29.7-.75.7-1.24.01-1.24-1.64-1.82-2.35-.72-.21.33-.18.73-.18 1.1H5.75c0-1.97 1.03-3.26 3.03-3.26 1.75 0 3.47.87 3.47 2.83 0 .57-.2 1.05-.48 1.44Z"/></svg></a>
+                </li>
+
+
+                <li class="js-topbar-dialog-corral" role="presentation">
+
+
+                    <div class="topbar-dialog siteSwitcher-dialog dno" role="menu">
+                        <div class="header fw-wrap">
+                            <h3 class="flex--item">
+                                <a href="https://ru.stackoverflow.com">&#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x435; &#x441;&#x43E;&#x43E;&#x431;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E;</a>
+                            </h3>
+                            <div class="flex--item fl1">
+                                <div class="ai-center d-flex jc-end">
+                                    <button
+                                            class="js-close-button s-btn s-btn__muted p0 ml8 d-none sm:d-block"
+                                            type="button"
+                                            aria-label="Close"
+                                    >
+                                        <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18"  viewBox="0 0 18 18"><path  d="M15 4.41 13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9 15 4.41Z"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="header" id="your-communities-header">
+                            <h3>
+                                &#x412;&#x430;&#x448;&#x438; &#x441;&#x43E;&#x43E;&#x431;&#x449;&#x435;&#x441;&#x442;&#x432;&#x430;            </h3>
+
+                        </div>
+                        <div class="modal-content" id="your-communities-section">
+
+                            <div class="call-to-login">
+                                Чтобы изменить список, <a href="" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">зарегистрируйтесь</a> или <a href="" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">войдите</a>.                </div>
+                        </div>
+
+
+                        <div class="modal-content">
+                            <div class="child-content"></div>
+                        </div>
+                    </div>
+
+                </li>
+
+                <li role="none"><button class="s-topbar--item s-btn s-btn__icon s-btn__muted d-none sm:d-inline-flex js-searchbar-trigger" role="menuitem" aria-label="&#x41F;&#x43E;&#x438;&#x441;&#x43A;" aria-haspopup="true" aria-controls="search" title="Click to show search"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18"  viewBox="0 0 18 18"><path  d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"/></svg></button></li>
+                <li role="none">
+                    <a href="" class="s-topbar--item s-topbar--item__unset s-btn s-btn__filled ws-nowrap js-gps-track" role="menuitem" rel="nofollow"
+                       data-gps-track="login.click" data-ga="[&quot;top navigation&quot;,&quot;login button click&quot;,null,null,null]">&#x412;&#x43E;&#x439;&#x442;&#x438;</a>
+                </li>
+                <li role="none"><a href="" class="s-topbar--item s-topbar--item__unset ml4 s-btn s-btn__primary ws-nowrap" role="menuitem" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">&#x420;&#x435;&#x433;&#x438;&#x441;&#x442;&#x440;&#x430;&#x446;&#x438;&#x44F;</a></li>
+            </ol>
+        </nav>
+
+
+    </div>
+</header>
+
+<div class="container">
+
+    <div id="left-sidebar" data-is-here-when="" class="left-sidebar js-pinned-left-sidebar ps-relative">
+        <div class="left-sidebar--sticky-container js-sticky-leftnav">
+            <nav role="navigation">
+                <ol class="nav-links">
+
+                </ol>
+            </nav>
+        </div>
+
+    </div>
+
+    <div id="content" class="d-flex flex__center snippet-hidden">
+
+        <div class="flex--item">
+
+            <div class="ta-center fs-title mx-auto mb24">
+                <a href="">
+                    <svg aria-hidden="true" class="native svg-icon iconLogoGlyphMd" width="32" height="37" viewBox="0 0 32 37"><path d="M26 33v-9h4v13H0V24h4v9h22Z" fill="#BCBBBB"/><path d="m21.5 0-2.7 2 9.9 13.3 2.7-2L21.5 0ZM26 18.4 13.3 7.8l2.1-2.5 12.7 10.6-2.1 2.5ZM9.1 15.2l15 7 1.4-3-15-7-1.4 3Zm14 10.79.68-2.95-16.1-3.35L7 23l16.1 2.99ZM23 30H7v-3h16v3Z" fill="#F48024"/></svg>                    </a>
+            </div>
+            <div id="openid-buttons" class="mx-auto d-flex flex__fl-grow1 fd-column gs8 gsy mb16 wmx3">
+                <button class="flex--item s-btn s-btn__icon s-btn__google bar-md ba bc-black-100" data-provider='google' data-oauthserver='' data-oauthversion='2.0'>
+                    <svg aria-hidden="true" class="native svg-icon iconGoogle" width="18" height="18"  viewBox="0 0 18 18"><path fill="#4285F4" d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18Z"/><path fill="#34A853" d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17Z"/><path fill="#FBBC05" d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07Z"/><path fill="#EA4335" d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3Z"/></svg>
+                    Войти через Google        </button>
+                <button class="flex--item s-btn s-btn__icon s-btn__github bar-md ba bc-black-100" data-provider='github' data-oauthserver='' data-oauthversion='2.0'>
+                    <svg aria-hidden="true" class="svg-icon iconGitHub" width="18" height="18"  viewBox="0 0 18 18"><path fill="#010101" d="M9 1a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 9 1Z"/></svg>
+                    Войти через GitHub        </button>
+                <button class="flex--item s-btn s-btn__icon s-btn__facebook bar-md" data-provider='facebook' data-oauthserver='' data-oauthversion='2.0'>
+                    <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18"  viewBox="0 0 18 18"><path fill="#4167B2" d="M3 1a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3Zm6.55 16v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h-2.5Z"/></svg>
+                    Войти через Facebook        </button>
+                <button class="flex--item s-btn s-btn__icon s-btn__vk bar-md ba bc-black-100" data-provider='vk' data-oauthserver='' data-oauthversion='2.0'>
+                    <svg aria-hidden="true" class="native svg-icon iconVK" width="18" height="18"  viewBox="0 0 18 18"><path fill="#507299" d="M8.44 14.93h1.04s.3-.04.47-.22c.15-.17.15-.48.15-.48s-.03-1.47.62-1.68c.64-.22 1.45 1.41 2.31 2.04.66.48 1.16.38 1.16.38l2.3-.04s1.22-.08.64-1.08c-.04-.08-.32-.75-1.7-2.1-1.45-1.42-1.25-1.2.49-3.65 1.05-1.5 1.48-2.4 1.34-2.8-.12-.36-.9-.27-.9-.27l-2.6.02s-.19-.02-.33.07c-.14.09-.22.3-.22.3s-.42 1.16-.97 2.14c-1.16 2.08-1.63 2.2-1.81 2.06-.43-.3-.32-1.2-.32-1.85 0-2.01.29-3.38-.56-3.6a4.5 4.5 0 0 0-1.22-.13 5.3 5.3 0 0 0-2.15.24c-.3.15-.52.5-.39.51.17.03.56.11.77.41.27.39.25 1.77.25 1.77s.16 2.38-.35 2.67c-.36.2-.83-.21-1.87-2.1-.53-.96-.93-2.03-.93-2.03s-.07-.2-.21-.3c-.16-.13-.4-.18-.4-.18l-2.47.02s-.37.02-.5.19c-.12.14-.01.46-.01.46S2 10.5 4.19 12.9c2.01 2.21 4.29 2.07 4.29 2.07l-.04-.04Z"/></svg>
+                    Войти через &#x412;&#x41A;&#x43E;&#x43D;&#x442;&#x430;&#x43A;&#x442;&#x435;        </button>
+                <button class="flex--item s-btn s-btn__icon s-btn__yandex bar-md ba bc-black-100" data-provider='yandex' data-oauthserver='' data-oauthversion='2.0'>
+                    <svg aria-hidden="true" class="native svg-icon iconYandex" width="18" height="18"  viewBox="0 0 18 18"><path fill="red" d="M11.26 2.48h-.92c-1.38 0-2.73.92-2.73 3.58 0 2.57 1.23 3.4 2.73 3.4h.92V2.48Zm-1.43 8.41L7.1 17.02h-2l3-6.55c-1.4-.72-2.34-2.02-2.34-4.41 0-3.36 2.12-5.03 4.65-5.03h2.57v16h-1.72v-6.14H9.83Z"/></svg>
+                    Войти через &#x42F;&#x43D;&#x434;&#x435;&#x43A;&#x441;        </button>
+            </div>
+
+
+            <div id="formContainer" class="mx-auto mb24 p24 wmx3 bg-white bar-lg bs-xl mb24">
+                <form id="login-form" class="d-flex fd-column gs12 gsy" action="/users/login" method="POST">
+                    <input type="hidden" name="fkey" value="75f98b4ee0a1c85c2fa35ac4fcc377f3f02773313d932de508b874359a9676d4">
+                    <input type="hidden" name="ssrc" value="login" />
+                    <div class="d-flex fd-column gs4 gsy js-auth-item ">
+                        <label class="flex--item s-label" for="email">&#x41F;&#x43E;&#x447;&#x442;&#x430;</label>
+                        <div class="d-flex ps-relative">
+                            <input class="s-input" id="email" type="email" size="30" maxlength="100" name="email" />
+                            <svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18"  viewBox="0 0 18 18"><path  d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/></svg>
+                        </div>
+                        <p class="flex--item s-input-message js-error-message d-none">
+
+                        </p>
+
+                    </div>
+                    <div class="d-flex fd-column-reverse gs4 gsy js-auth-item ">
+                        <p class="flex--item s-input-message js-error-message d-none">
+
+                        </p>
+
+                        <div class="d-flex ps-relative js-password">
+                            <input class="flex--item s-input" type="password" autocomplete="off" name="password" id="password" />
+                            <svg aria-hidden="true" class="s-input-icon js-alert-icon d-none svg-icon iconAlertCircle" width="18" height="18"  viewBox="0 0 18 18"><path  d="M9 17c-4.36 0-8-3.64-8-8 0-4.36 3.64-8 8-8 4.36 0 8 3.64 8 8 0 4.36-3.64 8-8 8ZM8 4v6h2V4H8Zm0 8v2h2v-2H8Z"/></svg>
+                        </div>
+                        <div class="d-flex ai-center ps-relative jc-space-between">
+                            <label class="flex--item s-label" for="password">&#x41F;&#x430;&#x440;&#x43E;&#x43B;&#x44C;</label>
+
+                            <a class="flex--item s-link fs-caption" href="/users/account-recovery">&#x417;&#x430;&#x431;&#x44B;&#x43B;&#x438; &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44C;?</a>
+                        </div>
+                    </div>
+                    <div class="d-flex gs4 gsy fd-column js-auth-item ">
+                        <button class="flex--item s-btn s-btn__primary" id="submit-button" name="submit-button">&#x412;&#x43E;&#x439;&#x442;&#x438;</button>
+                        <p class="flex--item s-input-message js-error-message d-none">
+
+                        </p>
+
+                    </div>
+
+                    <input type="hidden" id="oauth_version" name="oauth_version" />
+                    <input type="hidden" id="oauth_server" name="oauth_server" />
+
+
+                </form>
+            </div>
+
+            <div class="mx-auto ta-center fs-body1 p16 pb0 mb24 w100 wmx3">
+                Ещё нет учётной записи? <a href="/users/signup">Зарегистрируйтесь</a>
+
+            </div>
+
+
+</body>
+</html>
