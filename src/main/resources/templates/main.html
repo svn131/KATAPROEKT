@@ -1,0 +1,367 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<script type="text/javascript" src="/js/sidebar.js"></script>
+<script type="text/javascript" src="/js/header.js"></script>
+<script type="text/javascript" src="/js/footer.js"></script>
+
+<head>
+
+    <title>Stack Overkata</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overkata" href="/opensearch.xml">
+    <meta name="description" content="Stack Overkata is the largest, most trusted online community for developers to learn, share&#x200B; &#x200B;their programming &#x200B;knowledge, and build their careers."/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+    <meta property="og:type" content= "website" />
+    <meta property="og:url" content="http://localhost:8080/main"/>
+    <meta property="og:site_name" content="Stack Overkata" />
+    <script defer src="https://cdn.sstatic.net/Js/third-party/npm/@stackoverflow/stacks/dist/js/stacks.min.js?v=30250417762a"></script>
+    <script src="https://cdn.sstatic.net/Js/stub.en.js?v=68a37805e06d"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Shared/stacks.css?v=73d389de9f03">
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/stackoverflow/primary.css?v=4218d2c12431">
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Shared/Product/product.css?v=f5d2db9a2252">
+    <script defer src="https://cdn.sstatic.net/Js/product/animations.en.js?v=d4962d484eeb"></script>
+    <script defer src="https://cdn.sstatic.net/Js/product/lazy-load-images.en.js?v=1a12c2436a50"></script>
+
+    <link rel="alternate" type="application/atom+xml" title="Feed of recent questions" href="/feeds">
+
+    <style>
+        .p-wrapper-home {
+            max-width: 1950px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        :root {
+            --orange-100: #FFA07A;
+            --white: #FFFFFF;
+            --blue-100: #1E90FF;
+        }
+    </style>
+
+</head>
+<div class="container"></div>
+<div id="notify-container"></div>
+<div id="custom-header"></div>
+
+<header class="s-topbar ps-fixed t0 l0 js-top-bar">
+    <div class="s-topbar--container">
+        <a href="#" class="s-topbar--menu-btn js-left-sidebar-toggle" role="menuitem" aria-haspopup="true" aria-controls="left-sidebar" aria-expanded="false"><span></span></a>
+        <div class="topbar-dialog leftnav-dialog js-leftnav-dialog dno">
+            <div class="left-sidebar js-unpinned-left-sidebar" data-can-be="left-sidebar" data-is-here-when="sm md lg"></div>
+        </div>
+        <a href="http://localhost:8080/main" class="s-topbar--logo js-gps-track"
+           data-gps-track="top_nav.click({is_current:true, location:1, destination:8})">
+            <span class="-img _glyph">Stack Overkata</span>
+        </a>
+
+
+
+        <ol class="s-navigation" role="presentation">
+
+            <li class="md:d-none">
+                <a href="http://localhost:8080/about" class="s-navigation--item js-gps-track"
+                   data-gps-track="top_nav.products.click({location:1, destination:7})"
+                   data-ga="[&quot;top navigation&quot;,&quot;about menu click&quot;,null,null,null]">About</a>
+            </li>
+
+            <li>
+                <a href="#"
+                   class="s-navigation--item js-gps-track js-products-menu"
+                   aria-controls="products-popover"
+                   data-controller="s-popover"
+                   data-action="s-popover#toggle"
+                   data-s-popover-placement="bottom"
+                   data-s-popover-toggle-class="is-selected"
+                   data-gps-track="top_nav.products.click({location:1, destination:1})"
+                   data-ga="[&quot;top navigation&quot;,&quot;products menu click&quot;,null,null,null]">
+                    Products
+                </a>
+            </li>
+
+            <li class="md:d-none">
+                <a href="/teams" class="s-navigation--item js-gps-track"
+                   data-gps-track="top_nav.products.click({location:1, destination:7})"
+                   data-ga="[&quot;top navigation&quot;,&quot;learn more - teams&quot;,null,null,null]">For Teams</a>
+            </li>
+        </ol>
+        <div class="s-popover ws2 mtn2 p0"
+             id="products-popover"
+             role="menu"
+             aria-hidden="true">
+            <div class="s-popover--arrow"></div>
+            <ol class="list-reset s-anchors s-anchors__inherit">
+                <li class="m6">
+                    <a href="/questions" class="bar-sm p6 d-block h:bg-black-100 js-gps-track"
+                       data-gps-track="top_nav.products.click({location:1, destination:2})"
+                       data-ga="[&quot;top navigation&quot;,&quot;public qa submenu click&quot;,null,null,null]">
+                        <span class="fs-body1 d-block">Stack Overkata</span>
+                        <span class="fs-caption d-block fc-light">Public questions &amp; answers</span>
+                    </a>
+                </li>
+                <li class="m6">
+                    <a href="/teams" class="bar-sm p6 d-block h:bg-black-100 js-gps-track"
+                       data-gps-track="top_nav.products.click({location:1, destination:3})"
+                       data-ga="[&quot;top navigation&quot;,&quot;teams submenu click&quot;,null,null,null]">
+                        <span class="fs-body1 d-block">Stack Overflow for Teams</span>
+                        <span class="fs-caption d-block fc-light">Where developers &amp; technologists share private knowledge with coworkers</span>
+                    </a>
+                </li>
+                <li class="m6">
+                    <a href="http://localhost:8080/talent" class="bar-sm p6 d-block h:bg-black-100 js-gps-track"
+                       data-gps-track="top_nav.products.click({location:1, destination:5})"
+                       data-ga="[&quot;top navigation&quot;,&quot;talent submenu click&quot;,null,null,null]">
+                        <span class="fs-body1 d-block">Talent</span>
+                        <span class="fs-caption d-block fc-light">
+								Build your employer brand
+							</span>
+                    </a>
+                </li>
+                <li class="m6">
+                    <a href="http://localhost:8080/advertising" class="bar-sm p6 d-block h:bg-black-100 js-gps-track"
+                       data-gps-track="top_nav.products.click({location:1, destination:6})"
+                       data-ga="[&quot;top navigation&quot;,&quot;advertising submenu click&quot;,null,null,null]">
+                        <span class="fs-body1 d-block">Advertising</span>
+                        <span class="fs-caption d-block fc-light">Reach developers &amp; technologists worldwide</span>
+                    </a>
+                </li>
+                <li class="bg-black-025 bt bc-black-075 py6 px6 bbr-md">
+                    <a href="http://localhost:8080/company" class="fc-light d-block py6 px6 h:fc-black-800 js-gps-track"
+                       data-gps-track="top_nav.products.click({location:1, destination:7})"
+                       data-ga="[&quot;top navigation&quot;,&quot;about submenu click&quot;,null,null,null]">About the company</a>
+                </li>
+            </ol>
+        </div>
+
+
+        <form id="search" role="search" action=/search class="s-topbar--searchbar js-searchbar " autocomplete="off">
+            <div class="s-topbar--searchbar--input-group">
+                <input name="q"
+                       type="text"
+                       role="combobox"
+                       placeholder="Search&#x2026;"
+                       value=""
+                       autocomplete="off"
+                       maxlength="240"
+                       class="s-input s-input__search js-search-field "
+                       aria-label="Search"
+                       aria-controls="top-search"
+                       data-controller="s-popover"
+                       data-action="focus->s-popover#show"
+                       data-s-popover-placement="bottom-start" />
+                <svg aria-hidden="true" class="s-input-icon s-input-icon__search svg-icon iconSearch" width="18" height="18"  viewBox="0 0 18 18"><path  d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"/></svg>
+                <div class="s-popover p0 wmx100 wmn4 sm:wmn-initial js-top-search-popover" id="top-search" role="menu">
+                    <div class="s-popover--arrow"></div>
+                    <div class="js-spinner p24 d-flex ai-center jc-center d-none">
+                        <div class="s-spinner s-spinner__sm fc-orange-400">
+                            <div class="v-visible-sr">Loading&#x2026;</div>
+                        </div>
+                    </div>
+
+                    <span class="v-visible-sr js-screen-reader-info"></span>
+                    <div class="js-ac-results overflow-y-auto hmx3 d-none"></div>
+
+                    <div class="js-search-hints" aria-describedby="Tips for searching"></div>
+                </div>
+            </div>
+        </form>
+
+        <nav class="h100 ml-auto overflow-x-auto pr12">
+            <ol class="s-topbar--content" role="menubar">
+
+
+
+                <li class="js-topbar-dialog-corral" role="presentation">
+
+
+                    <div class="topbar-dialog siteSwitcher-dialog dno" role="menu">
+                        <div class="header fw-wrap">
+                            <h3 class="flex--item">
+                                <a href="hhttp://localhost:8080/main">current community</a>
+                            </h3>
+                            <div class="flex--item fl1">
+                                <div class="ai-center d-flex jc-end">
+                                    <button
+                                            class="js-close-button s-btn s-btn__muted p0 ml8 d-none sm:d-block"
+                                            type="button"
+                                            aria-label="Close"
+                                    >
+                                        <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18"  viewBox="0 0 18 18"><path  d="M15 4.41 13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9 15 4.41Z"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-content bg-powder-050 current-site-container">
+                            <ul class="current-site ">
+                                <li class="d-flex">
+                                    <div class="fl1">
+                                        <a href="http://localhost:8080/main"
+                                           class="current-site-link site-link js-gps-track d-flex gs8 gsx"
+                                           data-id="1"
+                                           data-gps-track="site_switcher.click({ item_type:3 })">
+                                            <div class="favicon favicon-stackoverflow site-icon flex--item" title="Stack Overflow"></div>
+                                            <span class="flex--item fl1">
+            Stack Overkata
+        </span>
+                                        </a>
+
+                                    </div>
+                                    <div class="related-links">
+                                        <a href="http://localhost:8080/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="header" id="your-communities-header">
+                            <h3>
+                                your communities            </h3>
+
+                        </div>
+                        <div class="modal-content" id="your-communities-section">
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/297-main
+                            <div class="call-to-login">
+                                <a href="http://localhost:8080/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2f" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2f" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.                </div>
+                        </div>
+
+                        <div class="header">
+                            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+                            </h3>
+                            <a href="http://localhost:8080/main" class="float-right">company blog</a>
+                        </div>
+                        <div class="modal-content">
+                            <div class="child-content"></div>
+                        </div>
+                    </div>
+
+                </li>
+
+                <li role="none"><button class="s-topbar--item s-btn s-btn__icon s-btn__muted d-none sm:d-inline-flex js-searchbar-trigger" role="menuitem" aria-label="Search" aria-haspopup="true" aria-controls="search" title="Click to show search"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18"  viewBox="0 0 18 18"><path  d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"/></svg></button></li>
+                <li role="none">
+                    <a href="http://localhost:8080/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2f" class="s-topbar--item s-topbar--item__unset s-btn s-btn__filled ws-nowrap js-gps-track" role="menuitem" rel="nofollow"
+                       data-gps-track="login.click" data-ga="[&quot;top navigation&quot;,&quot;login button click&quot;,null,null,null]">Log in</a>
+                </li>
+                <li role="none"><a href="http://localhost:8080/users/signup?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2f" class="s-topbar--item s-topbar--item__unset ml4 s-btn s-btn__primary ws-nowrap" role="menuitem" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Sign up</a></li>
+            </ol>
+        </nav>
+
+
+    </div>
+</header>
+
+<div class="container wmx100 w100 p-ff-source">
+
+    <div id="content" class="w100 wmx100 p0 snippet-hidden bg-black-025 snippet-hidden">
+
+
+        <header class="p-wrapper-home btr-lg p48 md:p32 sm:p12 ta-center ps-relative">
+            <div style="clip-path:url(#curve)" class="p32 sm:p12 bar-lg p-bg-dark-gradient d:fc-black-750 ps-relative z-selected fc-black-025 p-font-smooth mbn128 pb128">
+                <div class="wmx9 mx-auto d-flex flex__allitems6 sm:fd-column">
+                    <img src="https://cdn.sstatic.net/Img/home/illo-code.svg?v=b7ee00fff9d8" class="uc-none ps-absolute t128 mt128" style="left:8%" alt="">
+                    <img src="https://cdn.sstatic.net/Img/home/illo-code.svg?v=b7ee00fff9d8" class="uc-none ps-absolute tn128 mt128" style="right:8%" alt="">
+
+                    <div class="flex--item p16 sm:p12 sm:mb12">
+                        <div class="ps-relative p-speech-bubble--right h100 p24 bblr-lg btlr-lg btrr-lg bg-orange-100 fc-black-800">
+                            <svg aria-hidden="true" class="fc-orange-500 mb16 svg-spot spotSearch" width="48" height="48"  viewBox="0 0 48 48"><path  d="M29.22 38.1a3.4 3.4 0 0 1 4.81-4.82l8.81 8.81a3.4 3.4 0 0 1-4.81 4.81l-8.81-8.8Z" opacity=".2"/><path  d="M18.5 5a1 1 0 1 0 0 2c.63 0 1.24.05 1.84.15a1 1 0 0 0 .32-1.98A13.6 13.6 0 0 0 18.5 5Zm7.02 1.97a1 1 0 1 0-1.04 1.7 11.5 11.5 0 0 1 5.44 8.45 1 1 0 0 0 1.98-.24 13.5 13.5 0 0 0-6.38-9.91ZM18.5 0a18.5 18.5 0 1 0 10.76 33.55c.16.57.46 1.12.9 1.57L40 44.94A3.5 3.5 0 1 0 44.94 40l-9.82-9.82c-.45-.45-1-.75-1.57-.9A18.5 18.5 0 0 0 18.5 0ZM2 18.5a16.5 16.5 0 1 1 33 0 16.5 16.5 0 0 1-33 0Zm29.58 15.2a1.5 1.5 0 1 1 2.12-2.12l9.83 9.83a1.5 1.5 0 1 1-2.12 2.12l-9.83-9.83Z"/></svg>
+                            <h2 class="fs-subheading wmx3 mx-auto">Find the best answer to your technical question, help others answer theirs</h2>
+                            <a href="/users/signup?ssrc=product_home" class="s-btn w100 wmx2 fs-body2 px32 bar-md bg-orange-500 h:bg-orange-600 fc-white d:fc-black-900 p-ff-source-bold mt-auto" data-ga="[&quot;home page&quot;,&quot;header cta&quot;,&quot;join community&quot;,null,null]">Join the community</a>
+                            <p class="mb0 mt12 fc-black-600">or <a class="s-link s-link__underlined fc-black-700 h:fc-orange-600" href="/questions">search content</a></p>
+                        </div>
+                    </div>
+                    <div class="flex--item p16 sm:p12">
+                        <div class="ps-relative p-speech-bubble--left h100 p24 bbrr-lg btlr-lg btrr-lg bg-blue-100 fc-black-800">
+                            <svg aria-hidden="true" class="fc-blue-500 mb16 svg-spot spotLock" width="48" height="48"  viewBox="0 0 48 48"><path  d="M12 22a2 2 0 0 0-2 2v19a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V26a4 4 0 0 0-4-4H12Zm6 7a5 5 0 1 1 7.67 4.23l.05.35c.15.84.36 1.8.61 2.86A2.06 2.06 0 0 1 24.35 39h-2.7a2.06 2.06 0 0 1-1.98-2.56c.29-1.2.52-2.3.66-3.2l-.19-.14A5 5 0 0 1 18 29Z" opacity=".2"/><path  d="M23 24a5 5 0 0 0-2.86 9.1l.2.13c-.15.91-.38 2-.67 3.21A2.06 2.06 0 0 0 21.65 39h2.7c1.32 0 2.3-1.26 1.98-2.56a46.74 46.74 0 0 1-.6-2.86l-.06-.35A5 5 0 0 0 23 24Zm0 2a3 3 0 0 1 1.76 5.43l-.16.11a2 2 0 0 0-.91 2c.16.98.4 2.12.7 3.37.01.05-.02.09-.04.09h-2.7c-.02 0-.05-.04-.04-.09.3-1.25.54-2.4.7-3.36a2 2 0 0 0-.78-1.92l-.13-.09A3 3 0 0 1 23 26ZM12 12.44V18H9a3 3 0 0 0-3 3v21a3 3 0 0 0 3 3h28a3 3 0 0 0 3-3V21a3 3 0 0 0-3-3h-3v-5.56C34 6.2 29.36 1 23 1S12 6.19 12 12.44ZM23 3c5.14 0 9 4.18 9 9.44V18H14v-5.56C14 7.18 17.86 3 23 3ZM9 20h28a1 1 0 0 1 1 1v21a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V21a1 1 0 0 1 1-1Z"/></svg>
+                            <h2 class="fs-subheading wmx3 mx-auto">Want a secure, private space for your technical knowledge?</h2>
+
+                            <a href="http://localhost:8080/teams" class="s-btn fs-body2 bar-md bg-blue-500 h:bg-blue-600 fc-white d:fc-black-900 p-ff-source-bold w100 wmx2 fs-body2 px32 w100 wmx2 fs-body2 px32" data-ga="[&quot;home page&quot;,&quot;header cta&quot;,&quot;Request a demo&quot;,null,null]">Discover Teams</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="p-ff-roboto-slab-bold fs-display2 mb0 pt64 pb64 ps-relative z-active overflow-hidden">
+                    Every <span class="js-user-slider p-home-tagline va-bottom ps-relative ws-nowrap d-inline-flex fd-column ai-center fc-orange-500 lg:d-block mx-auto ta-center" data-words="developer, data scientist, system admin, mobile developer, game developer">developer</span> has a<br class="lg:d-none"> tab open to<br class="d-none lg:d-block"> Stack Overflow
+                </h1>
+
+                <span class="w64 h8 bar-pill d-block bg-black-500 mx-auto"></span>
+
+                <div class="d-flex flex__allitems3 jc-center px12 md:fd-column pt32 pb64 sm:pb128 wmx9 mx-auto">
+                    <div class="flex--item py32 md:pt16 md:pb16">
+                        <div class="fs-title p-ff-roboto-slab-bold mb4">100+ million</div>
+                        <div class="fc-black-300 fs-body2 px24">monthly visitors to Stack Overflow & Stack Exchange</div>
+                    </div>
+                    <div class="flex--item py32 md:pt16 md:pb16">
+                        <div class="fs-title p-ff-roboto-slab-bold mb4">45.1+ billion</div>
+                        <div class="fc-black-300 fs-body2 px24">Times a developer got help since 2008</div>
+                    </div>
+                    <div class="flex--item py32 md:pt16 md:pb16">
+                        <div class="fs-title p-ff-roboto-slab-bold mb4">191% ROI</div>
+                        <div class="fc-black-300 fs-body2 px24">from companies using Stack Overflow for Teams</div>
+                    </div>
+                    <div class="flex--item py32 md:pt16 md:pb16">
+                        <div class="fs-title p-ff-roboto-slab-bold mb4">5,000+</div>
+                        <div class="fc-black-300 fs-body2 px24">Stack Overflow for Teams instances active every day</div>
+                    </div>
+                </div>
+            </div>
+
+            <span aria-hidden="true" class="p-bits fc-blue-800 tn8 l16 w128 h128 z-base"></span>
+            <span aria-hidden="true" class="p-bits fc-gold sm:d-none t128 l128 w64 h64"></span>
+            <span aria-hidden="true" class="p-bits fc-green-500 t50 ln16 w64 h64"></span>
+            <span aria-hidden="true" class="p-bits fc-blue-200 b0 l128 w24 h24"></span>
+            <span aria-hidden="true" class="p-bits fc-blue-300 tn12 r128 w128 h128 z-base"></span>
+            <span aria-hidden="true" class="p-bits p-fc-purple sm:d-none t64 r128 w32 h32"></span>
+            <span aria-hidden="true" class="p-bits fc-orange-500 sm:d-none t50 r0 w128 h128"></span>
+            <span aria-hidden="true" class="p-bits fc-yellow-400 b32 r128 w24 h24"></span>
+        </header>
+
+        <section class="wmx12 mx-auto ps-relative z-active mtn128 sm:mt0 p32 sm:pl12 sm:pr12 sm:pt48">
+            <div class="d-flex flex__allitems6 md:fd-column ta-center mx48 sm:ml0 sm:mr0">
+                <div class="flex--item p16">
+                    <div style="background: linear-gradient(0deg, var(--orange-100) 30%, var(--white))" class="h100 py48 sm:py32 bg-orange-050 bar-lg p-bs-wrapper">
+                        <a href="/questions" class="h48 d-block"><svg aria-hidden="true" class="native svg-icon iconLogoMd" width="187" height="37" viewBox="0 0 187 37"><path d="m42 23-2.2-.2c-1.7-.1-2.3-.8-2.3-2 0-1.4 1-2.2 3-2.2 1.3-.1 2.6.3 3.6 1.1l1.3-1.3c-1.4-1-3.1-1.5-4.8-1.4-2.9 0-4.9 1.5-4.9 3.9 0 2.2 1.4 3.4 4 3.6l2.2.2c1.6.1 2.2.8 2.2 2 0 1.6-1.4 2.4-3.6 2.4-1.6.1-3.1-.5-4.2-1.6L35 28.8c1.5 1.4 3.5 2 5.5 1.9 3.2 0 5.5-1.5 5.5-4.1 0-2.6-1.6-3.4-4-3.6Zm15.8-6.1c-2.2 0-3.5.4-4.7 1.9l1.3 1.3c.8-1.1 2.1-1.7 3.4-1.5 2.5 0 3.4 1 3.4 2.9v1.3h-4c-3 0-4.6 1.5-4.6 3.9 0 1 .3 2 1 2.7.8.9 1.9 1.2 3.8 1.2 1.4.1 2.9-.4 3.9-1.4v1.3h2v-9.1c-.1-2.9-1.9-4.5-5.5-4.5Zm3.4 8.9c.1.8-.1 1.7-.7 2.3a4 4 0 0 1-3 .9c-2.1 0-3.1-.7-3.1-2.3 0-1.6 1-2.4 3-2.4h3.8v1.5Zm9.7-7.1c1.2 0 2.4.5 3.1 1.5l1.3-1.3a5.4 5.4 0 0 0-4.4-2c-3.4 0-5.9 2.3-5.9 6.9 0 4.6 2.6 6.9 5.9 6.9 1.7.1 3.3-.7 4.4-2L74 27.4c-.7 1-1.9 1.5-3.1 1.5-1.2.1-2.4-.5-3.1-1.5-.7-1.1-1-2.3-.9-3.6-.1-1.3.2-2.5.9-3.6.7-1 1.9-1.6 3.1-1.5Zm16.8-1.6h-2.4L79.2 23V11.1h-2v19.4h2v-4.9l2.4-2.4 4.5 7.3h2.4l-5.6-8.6 4.8-4.8Zm9.2-.16c-1.6-.1-3.2.5-4.3 1.7-1.3 1.3-1.6 2.9-1.6 5.4 0 2.5.3 4.1 1.6 5.4 1.1 1.1 2.7 1.7 4.3 1.7 1.6.1 3.2-.5 4.3-1.7 1.3-1.3 1.6-2.9 1.6-5.4 0-2.5-.3-4.1-1.6-5.4a5.38 5.38 0 0 0-4.3-1.7Zm1.7 10.5c-.9.8-2.3.8-3.2 0-.7-.7-.8-2-.8-3.4s.1-2.7.8-3.4c.9-.8 2.3-.8 3.2 0 .7.7.8 1.9.8 3.4s-.1 2.7-.8 3.4Zm13.6-10.4-2.8 8.6-2.8-8.6h-3.7l5.2 14h2.7l5.1-14h-3.7Zm9.6-.1c-3.6 0-6.1 2.6-6.1 7.1 0 5.7 3.2 7.2 6.5 7.2 2 .1 4-.7 5.3-2.2l-2.1-2.1c-.8.9-2 1.4-3.2 1.3-1.6.1-3-1.1-3.1-2.7v-.4h8.7v-1.6c.1-3.8-2.1-6.6-6-6.6Zm-2.7 5.8c0-.5.1-1 .3-1.5.4-.9 1.3-1.4 2.3-1.4 1-.1 1.9.5 2.3 1.4.2.5.3 1 .3 1.5h-5.2Zm13.33-4.3v-1.3h-3.4v14h3.5v-8.4c-.1-1.3.8-2.4 2.1-2.6h.2c.7 0 1.4.3 1.8.8l2.6-2.6a4.1 4.1 0 0 0-3.3-1.3c-1.3-.1-2.6.4-3.5 1.4Zm7.6-2.8v15.4h3.5v-11h2.6v-2.7h-2.6v-1.5c-.1-.6.3-1.2.9-1.3h1.6v-3h-2a3.9 3.9 0 0 0-4 3.8v.3Zm20.27 1.3c-1.6-.1-3.2.5-4.3 1.7-1.3 1.3-1.6 2.9-1.6 5.4 0 2.5.3 4.1 1.6 5.4 1.1 1.1 2.7 1.7 4.3 1.7 1.6.1 3.2-.5 4.3-1.7 1.3-1.3 1.6-2.9 1.6-5.4 0-2.5-.3-4.1-1.6-5.4a5.38 5.38 0 0 0-4.3-1.7Zm1.7 10.5c-.9.8-2.3.8-3.2 0-.7-.7-.8-2-.8-3.4s.1-2.7.8-3.4c.9-.8 2.3-.8 3.2 0 .7.7.8 1.9.8 3.4s-.1 2.7-.8 3.4Zm20.7-10.4-2.3 8.6-2.9-8.6H175l-2.8 8.7-2.3-8.6h-3.7l4.3 14h2.9l2.9-8.8 2.9 8.8h3l4.3-14-3.8-.1Zm-31.22 9.8v-15.2h-3.5v15.4a3.8 3.8 0 0 0 3.6 4h2.5v-3h-1.3c-.6.1-1.1-.2-1.3-.8v-.4ZM52.7 17.4H49V13h-2v13.9c0 2 1.1 3.6 3.4 3.6h1.4v-1.7h-1c-1.3 0-1.8-.7-1.8-2v-7.7h1.9l1.8-1.7Z" fill="var(--black-800)"/><path d="M26 33v-9h4v13H0V24h4v9h22Z" fill="#BCBBBB"/><path d="m23.1 25.99.68-2.95-16.1-3.35L7 23l16.1 2.99ZM9.1 15.2l15 7 1.4-3-15-7-1.4 3Zm4.2-7.4L26 18.4l2.1-2.5L15.4 5.3l-2.1 2.5ZM21.5 0l-2.7 2 9.9 13.3 2.7-2L21.5 0ZM7 30h16v-3H7v3Z" fill="#F48024"/></svg></a>
+                        <img width="520" height="346" src="https://cdn.sstatic.net/Img/home/illo-public.svg?v=14bd5a506009" class="d-block my32 w100 h-auto" alt="Illustration of Stack Overflow">
+                        <h2 class="mx48 sm:ml32 sm:mr32 mb12 p-ff-roboto-slab-bold fs-headline1">
+                            A public platform building the definitive collection of coding questions & answers
+                        </h2>
+                        <p class="mx48 sm:ml32 sm:mr32 mb32 fc-black-600 fs-subheading">A community-based space to find and contribute answers to technical challenges, and one of the most popular websites in the world.</p>
+                        <a href="/users/signup?ssrc=product_home" class="s-btn w100 ws-nowrap wmx2 fs-body2 px32 bar-md bg-orange-500 h:bg-orange-600 fc-white d:fc-black-900 p-ff-source-bold mt-auto" data-ga="[&quot;home page&quot;,&quot;body cta&quot;,&quot;join community&quot;,null,null]">Join the community</a>
+                        <p class="mb0 mt12 fc-black-400">or <a class="s-link s-link__underlined fc-black-400 h:fc-orange-500" href="/questions">search content</a></p>
+                    </div>
+                </div>
+                <div class="flex--item p16">
+                    <div style="background: linear-gradient(0deg, var(--blue-100) 30%, var(--white))" class="h100 py48 sm:py32 bg-blue-050 bar-lg p-bs-wrapper">
+                        <a href="http://localhost:8080/teams" class="h48 d-block"><svg aria-hidden="true" class="native svg-icon iconLogoTeamsAltMd" width="185" height="37" viewBox="0 0 185 37"><path d="M26 33v-9h4v13H0V24h4v9h22Z" fill="#BCBBBB"/><path d="m23.1 25.99.68-2.95-16.1-3.35L7 23l16.1 2.99ZM9.1 15.2l15 7 1.4-3-15-7-1.4 3Zm4.2-7.4L26 18.4l2.1-2.5L15.4 5.3l-2.1 2.5ZM21.5 0l-2.7 2 9.9 13.3 2.7-2L21.5 0ZM7 30h16v-3H7v3Z" fill="#F48024"/><path d="M75.51 13.2h-10c-.3 0-.5.2-.5.5v15.67c0 .3.2.5.5.5h2.4c.3 0 .5-.2.5-.5v-6.11h6c.3 0 .5-.2.5-.5V20.6c0-.3-.2-.5-.5-.5h-6v-3.75h7.15c.3 0 .5-.2.5-.5v-2.16c-.05-.25-.3-.5-.55-.5Zm14.09 3.5a5.02 5.02 0 0 0-1.15-1.8 6.18 6.18 0 0 0-4.5-1.8 6.07 6.07 0 0 0-5.4 3.1c-.2.45-.4.95-.5 1.45-.1.5-.15 1.05-.2 1.6-.05.55-.05 1.35-.05 2.3 0 1.26.05 2.2.1 2.9.05.71.2 1.36.45 2.01.25.65.65 1.2 1.15 1.8 1.2 1.2 2.7 1.8 4.45 1.8a5.8 5.8 0 0 0 5.65-3.66c.25-.59.35-1.29.4-2 .05-.64.05-1.64.05-2.9 0-1.25 0-2.2-.05-2.9a5 5 0 0 0-.4-1.9Zm-8.25 1.65c.1-.55.3-1 .6-1.35.2-.25.5-.45.85-.6.35-.15.75-.2 1.1-.2.4 0 .75.1 1.1.2.35.15.65.35.85.6.3.35.5.75.6 1.3.1.6.15 1.7.15 3.2 0 1 0 1.8-.05 2.4a4 4 0 0 1-.25 1.31c-.1.3-.25.55-.5.8-.5.55-1.15.8-1.95.8a2.69 2.69 0 0 1-1.95-.75c-.2-.2-.35-.4-.4-.6-.05-.1-.15-.35-.2-.75l-.15-1.25c0-.5-.05-1.15-.05-1.96.1-1.45.15-2.55.25-3.15Zm20.72 4.41a4.6 4.6 0 0 0 2.9-4.46 4.71 4.71 0 0 0-2.55-4.4 5.64 5.64 0 0 0-2.8-.66h-6.1c-.3 0-.5.2-.5.5v15.68c0 .3.2.5.5.5h2.4c.3 0 .5-.2.5-.5V23.3h2.15l3.15 6.3c.1.16.25.3.45.3h2.75a.6.6 0 0 0 .45-.24c.1-.15.1-.35 0-.5l-3.3-6.41Zm-5.65-6.41h3c.7 0 1.2.15 1.6.55.4.35.55.8.55 1.45 0 .6-.2 1.05-.55 1.4-.4.35-.9.55-1.6.55h-3v-3.95Zm27.62-3.15h-11c-.3 0-.5.2-.5.5v2.15c0 .3.2.5.5.5h3.8v13.02c0 .3.2.5.5.5h2.35c.3 0 .5-.2.5-.5V16.35h3.8c.3 0 .5-.2.5-.5v-2.16c.05-.25-.2-.5-.45-.5Zm13.48 0h-10c-.3 0-.5.2-.5.5v15.67c0 .3.2.5.5.5h10c.3 0 .5-.2.5-.5V27.2c0-.3-.2-.5-.5-.5h-7.15V23h6c.3 0 .5-.2.5-.5v-2.1c0-.3-.2-.5-.5-.5h-6v-3.56h7.15c.3 0 .5-.2.5-.5v-2.16c0-.25-.25-.5-.5-.5Zm10.42.34a.48.48 0 0 0-.45-.35h-1.9c-.2 0-.4.15-.45.35l-5.75 15.68c-.05.15-.05.3.05.45.1.15.25.2.4.2h2.55c.2 0 .4-.15.45-.35l.95-2.8h5.45l.95 2.8c.05.2.25.35.45.35h2.55c.15 0 .3-.1.4-.2.1-.15.1-.3.05-.45l-5.7-15.68Zm.3 10.17h-3.4l1.75-4.9 1.65 4.9Zm21.75-10.51h-2.4c-.2 0-.35.1-.45.3l-4 8.76-4.1-8.77c-.1-.2-.25-.3-.45-.3h-2.4c-.3 0-.5.2-.5.5v15.68c0 .3.2.5.5.5h2.4c.3 0 .5-.2.5-.5V21.1l2.75 5.66c.1.15.25.3.45.3h1.75c.2 0 .35-.1.45-.3l2.65-5.6v8.26c0 .3.2.5.5.5h2.4c.3 0 .5-.2.5-.5V13.74c-.05-.3-.25-.55-.55-.55Zm13.45 8.15a3.8 3.8 0 0 0-1.3-.8 7.7 7.7 0 0 0-1.85-.45l-1.8-.25c-.3-.05-.6-.1-.9-.25a2.1 2.1 0 0 1-.6-.35c-.3-.25-.4-.6-.4-1.1 0-.4.1-.7.25-1 .2-.3.45-.5.75-.65.35-.15.8-.25 1.3-.25.45 0 .85.05 1.2.1s.7.2 1 .35c.3.15.6.35.9.65.2.2.5.2.7 0l1.55-1.5c.1-.1.15-.25.15-.35a.45.45 0 0 0-.15-.35 7.11 7.11 0 0 0-2.3-1.46 8.4 8.4 0 0 0-2.9-.45c-1.15 0-2.15.2-3 .6a4.67 4.67 0 0 0-2 1.8c-.45.76-.7 1.66-.7 2.66 0 1.4.45 2.55 1.3 3.36.8.75 1.85 1.2 3.25 1.4l1.85.25c.4.05.75.15.95.2.2.05.35.15.5.35.3.25.45.7.45 1.25 0 .6-.2 1.05-.65 1.35-.5.35-1.2.55-2.1.55-.5 0-1-.05-1.4-.15-.4-.1-.8-.25-1.2-.45-.35-.2-.7-.45-1.05-.8a.45.45 0 0 0-.35-.15.45.45 0 0 0-.35.15l-1.6 1.55c-.1.1-.15.2-.15.35 0 .15.05.25.15.35a7.1 7.1 0 0 0 2.6 1.7c.95.36 2.05.5 3.3.5.85 0 1.7-.1 2.4-.34a5.16 5.16 0 0 0 3.25-2.66c.3-.65.45-1.35.45-2.1-.05-1.6-.55-2.8-1.5-3.6Z" fill="var(--black-800)"/><path fill="#D6D9DC" d="M47 13h1v17h-1z"/></svg></a>
+                        <img width="520" height="346" src="https://cdn.sstatic.net/Img/home/illo-teams.svg?v=7e543f14fcc0" class="d-block my32 w100 h-auto" alt="Illustration of Stack Overflow for Teams">
+                        <h2 class="mx48 sm:ml32 sm:mr32 mb12 p-ff-roboto-slab-bold fs-headline1">
+                            A private collaboration & knowledge sharing SaaS platform for companies
+                        </h2>
+                        <p class="mx48 sm:ml32 sm:mr32 mb32 fc-black-600 fs-subheading">A web-based platform to increase productivity, decrease cycle times, accelerate time to market, and protect institutional knowledge.</p>
+
+                        <div class="d-flex ai-center jc-center wmx2 mx-auto mb12">
+                            <span class="flex--item4 bt bc-blue-300"></span>
+                            <span class="flex--item fc-black-600 fl-shrink0 fs-body1 z-active px12">
+                        Get started
+                    </span>
+                            <span class="flex--item4 bt bc-blue-300"></span>
+                        </div>
+
+                        <div class="d-flex jc-center sm:fd-column">
+                            <a href="http://localhost:8080/explore-teams" class="s-btn fs-body2 bar-md bg-blue-500 h:bg-blue-600 fc-white d:fc-black-900 p-ff-source-bold" data-ga="[&quot;home page&quot;,&quot;body cta&quot;,&quot;Request a demo&quot;,null,null]">For large organizations <svg aria-hidden="true" class="svg-icon iconIndustry" width="18" height="18"  viewBox="0 0 18 18"><path  d="M10 16v-4H8v4H2V4c0-1.1.9-2 2-2h6c1.09 0 2 .91 2 2v2h2c1.09 0 2 .91 2 2v8h-6ZM4 4v2h2V4H4Zm0 4v2h2V8H4Zm4-4v2h2V4H8Zm0 4v2h2V8H8Zm-4 4v2h2v-2H4Zm8 0v2h2v-2h-2Zm0-4v2h2V8h-2Z"/></svg></a>
+
+                            <a href="http://localhost:8080/teams" class="s-btn ml8 sm:ml0 sm:mt8 fs-body2 bar-md bg-blue-500 h:bg-blue-600 fc-white d:fc-black-900 p-ff-source-bold" data-ga="[&quot;home page&quot;,&quot;body cta&quot;,&quot;create a team&quot;,null,null]">For small teams <svg aria-hidden="true" class="svg-icon iconPeople" width="18" height="18"  viewBox="0 0 18 18"><path  d="M17 14c0 .44-.45 1-1 1H9a1 1 0 0 1-1-1H2c-.54 0-1-.56-1-1 0-2.63 3-4 3-4s.23-.4 0-1c-.84-.62-1.06-.59-1-3 .06-2.42 1.37-3 2.5-3s2.44.58 2.5 3c.06 2.41-.16 2.38-1 3-.23.59 0 1 0 1s1.55.71 2.42 2.09c.78-.72 1.58-1.1 1.58-1.1s.23-.4 0-1c-.84-.61-1.06-.58-1-3 .06-2.41 1.37-3 2.5-3s2.44.59 2.5 3c.05 2.42-.16 2.39-1 3-.23.6 0 1 0 1s3 1.38 3 4Z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+</html>

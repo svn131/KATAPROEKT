@@ -148,6 +148,10 @@
             <artifactId>spring-boot-starter-aop</artifactId>
             <version>2.4.5</version>
         </dependency>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
 
     </dependencies>
 
@@ -165,7 +169,6 @@
                     <target>15</target>
                 </configuration>
             </plugin>
-
             <!-- For Swagger: documentation in YAML language -->
             <plugin>
                 <groupId>org.springdoc</groupId>
