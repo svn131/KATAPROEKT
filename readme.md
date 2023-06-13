@@ -612,12 +612,51 @@ this.mockMvc
 
 ==========================================
 
-# Как сменить профиль в конфигурации
-1. перейдите в настройки конфигурации -> настройки переменных окружения
+# Настройка и выбор профилей в конфигурации проекта с параметрами базы данных
 
-![](src/main/resources/static/images/git_tutor/set_env_variables.png)
+### Создание профилей в конфигурации проекта
 
-2. установите свои настройки 
+1. Создать файл с названием "application-local/dev.properties".
+
+2. Указываем переменные:
+   
+   ![](src/main/resources/static/images/profiles_tutor/profile_application_local.png)
+   
+Environment variables `HIBERNATE_DDL=;DB_BASE=;DB_SERVER=;DB_PORT=;DB_NAME=;DB_USERNAME=;DB_PASSWORD=`
+
+где:
+
+HIBERNATE_DDL - настройка ddl
+
+DB_BASE- тип БД
+
+DB_SERVER - адрес сервера (по умолчанию localhost)
+
+DB_PORT - порт
+
+DB_NAME - название БД
+
+DB_USERNAME - твой логин
+
+DB_PASSWORD - твой пароль
+
+3. Настроить параметры среды. 
+   
+   "1" Зайти в "Modify options"
+   
+   "2" добавить "Environment variables" добавить свои параметры среды:
+
+![](src/main/resources/static/images/profiles_tutor/modify_options.png)
+
+![](src/main/resources/static/images/profiles_tutor/Environment_variables.png)
+
+4. Запускаем, выбрав нужный профиль в VM Option.
+
+   
+   `-ea -Dspring.profiles.active=local/dev`
+
+   
+![](src/main/resources/static/images/profiles_tutor/vm-options.png)
 
 ==========================================
 
