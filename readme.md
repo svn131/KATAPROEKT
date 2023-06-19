@@ -660,3 +660,15 @@ DB_PASSWORD - твой пароль
 
 ==========================================
 
+# Добавление тестовых данных
+
+### Заполняются сущности: User, Role, Tag, Question, Answer, Reputation
+
+1. Перейти в Edit Configurations...
+2. Изменить значение HIBERNATE_DDL на update
+
+![init-test-db-setup.png](src/main/resources/static/images/init-test-db/init-test-db-setup.png)
+
+![init-test-db-setup2.png](src/main/resources/static/images/init-test-db/init-test-db-setup2.png)
+
+3. Запустить профиль.
