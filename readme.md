@@ -650,7 +650,7 @@ DB_PASSWORD - твой пароль
 
 ![](src/main/resources/static/images/profiles_tutor/Environment_variables.png)
 
-4. Запускаем, выбрав нужный профиль в VM Option.
+4. Запускаем, выбрав нужный профиль в VM Option local или dev.
 
    
    `-ea -Dspring.profiles.active=local/dev`
