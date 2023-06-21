@@ -2,9 +2,12 @@ package com.javamentor.qa.platform.webapp.controllers.rest;
 
 import com.javamentor.qa.platform.exception.ApiRequestException;
 import com.javamentor.qa.platform.models.dto.AnswerDto;
+import com.javamentor.qa.platform.models.entity.question.answer.Answer;
 import com.javamentor.qa.platform.models.entity.user.User;
 import com.javamentor.qa.platform.service.abstracts.dto.AnswerDtoService;
 import com.javamentor.qa.platform.service.abstracts.model.AnswerService;
+import com.javamentor.qa.platform.service.abstracts.model.VoteAnswerService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -15,25 +18,34 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
-
+@Api(tags = "Возвращает ответ за положительное голосование за ответ на вопрос")
 @RestController
 @RequestMapping("api/user/question/{questionId}/answer/{answerId}")
 public class ResourceAnswerController {
 
     private final AnswerService answerService;
     private final AnswerDtoService answerDtoService;
+    private final VoteAnswerService voteAnswerService;
+    private final UserDetailsService userDetailsService;
 
-    public ResourceAnswerController(AnswerService answerService, AnswerDtoService answerDtoService) {
+
+    public ResourceAnswerController(AnswerService answerService, AnswerDtoService answerDtoService, VoteAnswerService voteAnswerService, UserDetailsService userDetailsService) {
         this.answerService = answerService;
         this.answerDtoService = answerDtoService;
+        this.voteAnswerService = voteAnswerService;
+        this.userDetailsService = userDetailsService;
     }
 
     @DeleteMapping
@@ -64,5 +76,30 @@ public class ResourceAnswerController {
                 ? new ResponseEntity<>(HttpStatus.BAD_REQUEST)
                 : new ResponseEntity<>(list, HttpStatus.OK);
 
+    }
+
+    @ApiOperation(value = "Управление баллами репутации, обновление таблиц Reputation и Votes_on_answers", notes = "Возвращает различные ResponseEntity<?>" +
+            " в зависимости от результата")
+    @io.swagger.annotations.ApiResponses(value = {
+            @io.swagger.annotations.ApiResponse(code = 400, message = "Нельзя голосовать за свои ответы"),
+            @io.swagger.annotations.ApiResponse(code = 208, message = "Вы уже проголосовали за этот ответ"),
+            @io.swagger.annotations.ApiResponse(code = 200, message = "Вы успешно проголосовали. Внесена новая запись в таблицу Votes_on_answers " +
+                    "(В зависимости от результата метода addReputation также выполнено одно связанное действие: " +
+                    "'Обновление записи в таблице Reputation с увеличением баллов репутации на 10' или " +
+                    "'Новая запись в таблицу Reputation со значением баллов репутации равным 10'")
+    })
+    @PostMapping("/{id}/upVote")
+    public ResponseEntity<Long> answerUpVoteCount(@AuthenticationPrincipal @Parameter
+            (description = "Достаём текущего пользователя из SpringSecurity") Principal principal,
+                                                  @PathVariable @Parameter(description = "Номер ответа в БД в таблице Answer") Long id) {
+        // todo удалить после реализации авторизации
+        User user = (User) userDetailsService.loadUserByUsername(principal.getName());
+        Optional<Answer> answer = answerService.getAnswerById(id, user.getId());
+        if (answer.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } else {
+            voteAnswerService.addNewVoteOnAnswer(user, answer.orElseThrow());
+        }
+        return new ResponseEntity<>(voteAnswerService.getAllCurrentUserVotesOfAnswer(answer.get().getId(), user.getId()), HttpStatus.OK);
     }
 }

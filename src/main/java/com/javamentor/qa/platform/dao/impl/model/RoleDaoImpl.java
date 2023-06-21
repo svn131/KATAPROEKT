@@ -19,9 +19,7 @@ public class RoleDaoImpl extends ReadWriteDaoImpl<Role, Long> implements RoleDao
     @Override
     public Optional<Role> getByName(String name) {
         return SingleResultUtil.getSingleResultOrNull(entityManager.createQuery("""
-                        SELECT r
-                        FROM Role r
-                        WHERE r.name =:name
+                        SELECT r FROM Role r WHERE r.name =:name
                         """)
                 .setParameter("name", name));
     }
