@@ -5,6 +5,9 @@ import com.javamentor.qa.platform.models.dto.AnswerDto;
 import com.javamentor.qa.platform.models.entity.question.answer.Answer;
 import com.javamentor.qa.platform.models.entity.user.User;
 import com.javamentor.qa.platform.service.abstracts.dto.AnswerDtoService;
+import com.javamentor.qa.platform.models.dto.CommenAnswerDto;
+import com.javamentor.qa.platform.models.entity.question.answer.CommentAnswer;
+import com.javamentor.qa.platform.service.abstracts.model.CommentAnswerService;
 import com.javamentor.qa.platform.service.abstracts.model.AnswerService;
 import com.javamentor.qa.platform.service.abstracts.model.VoteAnswerService;
 import io.swagger.annotations.Api;
@@ -26,7 +29,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.security.Principal;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import java.security.*;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,13 +40,15 @@ import java.util.Optional;
 @RequestMapping("api/user/question/{questionId}/answer/{answerId}")
 public class ResourceAnswerController {
 
+    private final CommentAnswerService commentAnswerService;
     private final AnswerService answerService;
     private final AnswerDtoService answerDtoService;
     private final VoteAnswerService voteAnswerService;
     private final UserDetailsService userDetailsService;
 
 
-    public ResourceAnswerController(AnswerService answerService, AnswerDtoService answerDtoService, VoteAnswerService voteAnswerService, UserDetailsService userDetailsService) {
+    public ResourceAnswerController(CommentAnswerService commentAnswerService, AnswerService answerService, AnswerDtoService answerDtoService, VoteAnswerService voteAnswerService, UserDetailsService userDetailsService) {
+        this.commentAnswerService = commentAnswerService;
         this.answerService = answerService;
         this.answerDtoService = answerDtoService;
         this.voteAnswerService = voteAnswerService;
@@ -57,6 +64,7 @@ public class ResourceAnswerController {
         } catch (ApiRequestException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+
     }
 
     @GetMapping
@@ -101,5 +109,29 @@ public class ResourceAnswerController {
             voteAnswerService.addNewVoteOnAnswer(user, answer.orElseThrow());
         }
         return new ResponseEntity<>(voteAnswerService.getAllCurrentUserVotesOfAnswer(answer.get().getId(), user.getId()), HttpStatus.OK);
+    }
+
+    @PostMapping("/comment")
+    @ApiOperation(value = "Добавление комментария к ответу")
+    @ApiResponses(value = {
+            @ApiResponse (responseCode = "200", description = "Комментарий успешно добавлен"),
+            @ApiResponse (responseCode = "400", description = "Не удалось добавить комментарий к ответу")
+    })
+    public ResponseEntity<CommenAnswerDto> addAnswerComment(@PathVariable("questionId") Long questionId,
+                                                            @PathVariable("answerId") Long answerId,
+                                                            @RequestBody String comment) {
+        //Проверяем пустой ли комментарий
+        if (comment == null || comment.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        //Получаем наш комментраий к ответу
+        Optional<CommentAnswer> commentAnswerOptional = commentAnswerService.addCommentAnswer(answerId, questionId, comment);
+        //Проверяем не вернулся ли пустой Optional
+        if (commentAnswerOptional.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        //Получаем наш DTO
+        CommenAnswerDto commenAnswerDto = commentAnswerService.toDto(commentAnswerOptional.get());
+        return new ResponseEntity<>(commenAnswerDto, HttpStatus.OK);
     }
 }

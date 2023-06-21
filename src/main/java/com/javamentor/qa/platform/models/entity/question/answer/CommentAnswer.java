@@ -95,4 +95,5 @@ public class CommentAnswer implements Serializable {
     public void setComment(Comment comment) {
         this.comment = comment;
     }
+
 }
