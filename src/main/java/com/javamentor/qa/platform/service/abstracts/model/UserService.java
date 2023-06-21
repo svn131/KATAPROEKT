@@ -7,4 +7,7 @@ import java.util.Optional;
 
 public interface UserService extends ReadWriteService<User, Long> {
     Optional<User> getByEmail(String email);
+
+    // TODO: Удалить после реализации security
+    User getCurrentUser();
 }
