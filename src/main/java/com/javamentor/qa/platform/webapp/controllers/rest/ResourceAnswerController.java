@@ -68,22 +68,36 @@ public class ResourceAnswerController {
     }
 
     @GetMapping
-    @Operation(summary = "Получения списка ответов по id вопроса", description = "Возвращает список DTO ответов по id вопроса")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Ответы пользователя найдены",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = AnswerDto.class))}),
-            @ApiResponse(responseCode = "400", description = "По данному id не найдено вопроса"),
-            @ApiResponse(responseCode = "401", description = "Отказ в доступе"),
-            @ApiResponse(responseCode = "403", description = "Доступ запрещён"),
-            @ApiResponse(responseCode = "404", description = "Ответ не найден")})
-    public ResponseEntity<List<AnswerDto>> getAllAnswers(@Parameter(description = "id вопроса по которому получим ответы") @PathVariable Long questionId,
-                                                         @AuthenticationPrincipal @Parameter(description = "Авторизованный пользователь") User user) {
+    @Operation(
+            summary = "Получения списка ответов по id вопроса",
+            description = "Возвращает список DTO ответов по id вопроса"
+    )
+    @ApiResponses(
+            value = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "Ответы пользователя найдены",
+                            content = {@Content(
+                                    mediaType = "application/json",
+                                    schema = @Schema(implementation = AnswerDto.class)
+                            )}
+                    ),
+                    @ApiResponse(responseCode = "400", description = "По данному id не найдено вопроса"),
+                    @ApiResponse(responseCode = "401", description = "Отказ в доступе"),
+                    @ApiResponse(responseCode = "403", description = "Доступ запрещён"),
+                    @ApiResponse(responseCode = "404", description = "Ответ не найден")
+            }
+    )
+    public ResponseEntity<List<AnswerDto>> getAllAnswers(
+            @Parameter(description = "id вопроса по которому получим ответы")
+            @PathVariable Long questionId,
+            @AuthenticationPrincipal
+            @Parameter(description = "Авторизованный пользователь") User user
+    ) {
         List<AnswerDto> list = answerDtoService.getAllAnswersDtoByQuestionId(questionId, user.getId());
         return list.isEmpty()
-                ? new ResponseEntity<>(HttpStatus.BAD_REQUEST)
-                : new ResponseEntity<>(list, HttpStatus.OK);
-
+                ? ResponseEntity.badRequest().build()
+                : ResponseEntity.ok(list);
     }
 
     @ApiOperation(value = "Управление баллами репутации, обновление таблиц Reputation и Votes_on_answers", notes = "Возвращает различные ResponseEntity<?>" +
