@@ -1,5 +1,7 @@
 package com.javamentor.qa.platform.initdb;
 
+import com.javamentor.qa.platform.models.entity.Comment;
+import com.javamentor.qa.platform.models.entity.CommentType;
 import com.javamentor.qa.platform.models.entity.question.Question;
 import com.javamentor.qa.platform.models.entity.question.Tag;
 import com.javamentor.qa.platform.models.entity.question.answer.Answer;
@@ -7,6 +9,7 @@ import com.javamentor.qa.platform.models.entity.user.Role;
 import com.javamentor.qa.platform.models.entity.user.User;
 import com.javamentor.qa.platform.models.entity.user.reputation.Reputation;
 import com.javamentor.qa.platform.models.entity.user.reputation.ReputationType;
+import com.javamentor.qa.platform.service.abstracts.model.CommentService;
 import com.javamentor.qa.platform.service.abstracts.model.QuestionService;
 import com.javamentor.qa.platform.service.abstracts.model.RoleService;
 import com.javamentor.qa.platform.service.abstracts.model.TagService;
@@ -18,6 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,17 +41,24 @@ public class TestDataInitService {
 
     private final ReputationService reputationService;
 
+    private final CommentService commentService;
+
+
     public TestDataInitService(RoleService roleService, UserService userService, TagService tagService,
-                               QuestionService questionService, AnswerService answerService, ReputationService reputationService) {
+                               QuestionService questionService, AnswerService answerService, ReputationService reputationService,
+                               CommentService commentService) {
         this.roleService = roleService;
         this.userService = userService;
         this.tagService = tagService;
         this.questionService = questionService;
         this.answerService = answerService;
         this.reputationService = reputationService;
+        this.commentService = commentService;
     }
 
+
     @Transactional
+    @PostConstruct
     public void createEntity() {
         createRoles();
         createUsers();
@@ -55,6 +66,7 @@ public class TestDataInitService {
         createQuestions();
         createAnswers();
         createReputations();
+        createComments();
     }
 
     public PasswordEncoder passwordEncoder() {
@@ -335,4 +347,44 @@ public class TestDataInitService {
             reputationService.persistAll(reputations);
         }
     }
+
+    List<Comment> comments = new ArrayList<>();
+
+    List<Comment> commentsList = new ArrayList<>();
+
+    private void createComments() {
+        Comment comment01 = new Comment();
+        Comment comment02 = new Comment();
+        Comment comment03 = new Comment();
+
+        comment01.setCommentType(CommentType.QUESTION);
+        comment01.setText("Тестовый текст #1 для коментария под вопросом");
+        comment01.setUser(userList.get(1));
+        comment01.setPersistDateTime(LocalDateTime.now());
+        comment01.setLastUpdateDateTime(LocalDateTime.now());
+        comments.add(comment01);
+
+        comment02.setCommentType(CommentType.QUESTION);
+        comment02.setText("Тестовый текст #2 для коментария под вопросом");
+        comment02.setUser(userList.get(2));
+        comment02.setPersistDateTime(LocalDateTime.now());
+        comment02.setLastUpdateDateTime(LocalDateTime.now());
+        comments.add(comment02);
+
+        comment03.setCommentType(CommentType.QUESTION);
+        comment03.setText("Тестовый текст #3 для коментария под вопросом");
+        comment03.setUser(userList.get(0));
+        comment03.setPersistDateTime(LocalDateTime.now());
+        comment03.setPersistDateTime(LocalDateTime.now());
+        comments.add(comment03);
+
+        commentsList = commentService.getAll();
+        for (Comment comment: commentsList) {
+            comments.removeIf(comment1 -> comment.getText().equalsIgnoreCase(comment1.getText()));
+        }
+        if (!comments.isEmpty()) {
+            commentService.persistAll(comments);
+        }
+    }
+
 }
