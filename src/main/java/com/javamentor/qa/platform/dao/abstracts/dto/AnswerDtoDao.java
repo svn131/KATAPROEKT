@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface AnswerDtoDao {
     List<AnswerDto> getAllAnswersDtoByQuestionId(Long questionId, Long userId);
+
 }
