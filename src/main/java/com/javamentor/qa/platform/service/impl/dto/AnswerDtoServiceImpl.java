@@ -17,8 +17,7 @@ public class AnswerDtoServiceImpl implements AnswerDtoService {
     }
 
     @Override
-    public Optional<Optional<List<AnswerDto>>> getAllAnswersDtoByQuestionId(Long id, Long userId) {
-        Optional<List<AnswerDto>> answerDtoList = answerDtoDao.getAllAnswersDtoByQuestionId(id, userId);
-        return Optional.ofNullable(answerDtoList);
+    public Optional<List<AnswerDto>> getAllAnswersDtoByQuestionId(Long id, Long userId) {
+        return answerDtoDao.getAllAnswersDtoByQuestionId(id, userId);
     }
 }
