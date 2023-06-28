@@ -94,10 +94,15 @@ public class ResourceAnswerController {
             @AuthenticationPrincipal
             @Parameter(description = "Авторизованный пользователь") User user
     ) {
-        List<AnswerDto> list = answerDtoService.getAllAnswersDtoByQuestionId(questionId, user.getId());
-        return list.isEmpty()
-                ? ResponseEntity.badRequest().build()
-                : ResponseEntity.ok(list);
+        return (ResponseEntity<List<AnswerDto>>) answerDtoService.getAllAnswersDtoByQuestionId(questionId, user.getId())
+                .map(answerDtoList -> {
+                    if (answerDtoList.isEmpty()) {
+                        return ResponseEntity.badRequest().build();
+                    } else {
+                        return ResponseEntity.ok(answerDtoList);
+                    }
+                })
+                .orElse(ResponseEntity.badRequest().build());
     }
 
     @ApiOperation(value = "Управление баллами репутации, обновление таблиц Reputation и Votes_on_answers", notes = "Возвращает различные ResponseEntity<?>" +

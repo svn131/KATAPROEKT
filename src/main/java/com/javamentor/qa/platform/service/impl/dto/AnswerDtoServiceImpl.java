@@ -6,6 +6,7 @@ import com.javamentor.qa.platform.service.abstracts.dto.AnswerDtoService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AnswerDtoServiceImpl implements AnswerDtoService {
@@ -16,8 +17,8 @@ public class AnswerDtoServiceImpl implements AnswerDtoService {
     }
 
     @Override
-    public List<AnswerDto> getAllAnswersDtoByQuestionId(Long id, Long userId) {
-        return answerDtoDao.getAllAnswersDtoByQuestionId(id, userId);
+    public Optional<List<AnswerDto>> getAllAnswersDtoByQuestionId(Long id, Long userId) {
+        List<AnswerDto> answerDtoList = answerDtoDao.getAllAnswersDtoByQuestionId(id, userId);
+        return Optional.ofNullable(answerDtoList);
     }
-
 }
