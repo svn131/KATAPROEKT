@@ -6,3 +6,4 @@ public enum ReputationType {
     VoteAnswer,
     VoteQuestion
 }
+

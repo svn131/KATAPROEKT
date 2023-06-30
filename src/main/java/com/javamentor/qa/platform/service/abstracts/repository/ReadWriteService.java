@@ -19,3 +19,4 @@ public interface ReadWriteService<E, K> extends ReadOnlyService<E, K> {
 
     void deleteById(K id);
 }
+

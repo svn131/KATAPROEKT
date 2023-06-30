@@ -4,3 +4,4 @@ public enum CommentType {
     ANSWER,
     QUESTION,
 }
+

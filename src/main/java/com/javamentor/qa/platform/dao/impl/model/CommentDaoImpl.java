@@ -15,3 +15,4 @@ public class CommentDaoImpl extends ReadWriteDaoImpl<Comment, Long> implements C
     private EntityManager entityManager;
 
 }
+

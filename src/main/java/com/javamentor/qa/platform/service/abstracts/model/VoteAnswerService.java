@@ -15,3 +15,4 @@ public interface VoteAnswerService extends ReadWriteService<VoteAnswer, Long> {
 
     Long getAllCurrentUserVotesOfAnswer(Long answerId, Long userId);
 }
+

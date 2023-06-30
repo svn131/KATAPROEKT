@@ -26,3 +26,4 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return userByEmail.orElseThrow(() -> new UsernameNotFoundException("Не удалось найти такой аккаунт, проверьте правильность введенных данных"));
     }
 }
+

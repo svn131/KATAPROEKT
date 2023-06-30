@@ -61,3 +61,4 @@ public class ReputationServiceImpl extends ReadWriteServiceImpl<Reputation, Long
         return reputationDao.getReputationCount(id);
     }
 }
+

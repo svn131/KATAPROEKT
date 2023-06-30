@@ -6,3 +6,4 @@ import com.javamentor.qa.platform.models.dto.UserDto;
 public interface UserDtoDao extends ReadWriteDao<UserDto, Long> {
 
 }
+

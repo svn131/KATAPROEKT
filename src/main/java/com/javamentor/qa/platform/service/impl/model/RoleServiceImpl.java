@@ -25,3 +25,4 @@ public class RoleServiceImpl extends ReadWriteServiceImpl<Role, Long> implements
         return roleDao.getByName(name);
     }
 }
+

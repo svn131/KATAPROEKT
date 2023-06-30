@@ -1,0 +1,7 @@
+databaseChangeLog:
+#  - comment: "Empty changelog"
+  - include:
+#      file: liquibase/changelog-master.sql
+      file: db/changelog/07-01-changelog.sql
+
+

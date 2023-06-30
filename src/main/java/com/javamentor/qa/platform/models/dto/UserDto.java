@@ -34,3 +34,4 @@ public class UserDto {
 //    @Schema(description = "список топ-3 тэгов пользователя")
 //    private List<TagDto> listTop3TagDto;
 }
+

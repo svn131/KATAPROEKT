@@ -15,3 +15,4 @@ public class UserDaoImpl extends ReadWriteDaoImpl<User, Long> implements UserDao
         return super.getByEmail(email);
     }
 }
+

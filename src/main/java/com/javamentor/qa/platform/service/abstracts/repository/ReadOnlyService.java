@@ -15,3 +15,4 @@ public interface ReadOnlyService<E, K> {
 
     boolean existsByAllIds(Collection<K> ids);
 }
+

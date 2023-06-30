@@ -14,3 +14,4 @@ public class IgnoredTagDaoImpl extends ReadWriteDaoImpl<IgnoredTag, Long> implem
     @PersistenceContext
     private EntityManager entityManager;
 }
+

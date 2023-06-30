@@ -19,3 +19,4 @@ public interface ReputationService extends ReadWriteService<Reputation, Long> {
 
     Long getReputaionCount(Long id);
 }
+

@@ -24,3 +24,4 @@ public class RoleDaoImpl extends ReadWriteDaoImpl<Role, Long> implements RoleDao
                 .setParameter("name", name));
     }
 }
+

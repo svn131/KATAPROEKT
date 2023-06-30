@@ -11,3 +11,4 @@ public interface UserService extends ReadWriteService<User, Long> {
     // TODO: Удалить после реализации security
     User getCurrentUser();
 }
+

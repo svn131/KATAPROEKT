@@ -4,3 +4,4 @@ public enum ChatType {
     SINGLE,
     GROUP,
 }
+

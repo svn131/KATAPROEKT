@@ -27,3 +27,4 @@ public class TagDtoDaoImpl implements TagDtoDao {
                 .setMaxResults(10).getResultList();
     }
 }
+

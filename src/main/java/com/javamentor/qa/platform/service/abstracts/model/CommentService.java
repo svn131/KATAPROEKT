@@ -5,3 +5,4 @@ import com.javamentor.qa.platform.service.abstracts.repository.ReadWriteService;
 
 public interface CommentService extends ReadWriteService<Comment, Long> {
 }
+

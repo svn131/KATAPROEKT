@@ -672,3 +672,4 @@ DB_PASSWORD - твой пароль
 ![init-test-db-setup2.png](src/main/resources/static/images/init-test-db/init-test-db-setup2.png)
 
 3. Запустить профиль.
+4. 

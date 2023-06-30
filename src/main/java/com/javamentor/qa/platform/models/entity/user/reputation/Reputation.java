@@ -84,3 +84,4 @@ public class Reputation implements Serializable {
         return Objects.hash(id, persistDate, count);
     }
 }
+

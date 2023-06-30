@@ -15,3 +15,4 @@ public class VoteQuestionDaoImpl extends ReadWriteDaoImpl<VoteQuestion, Long> im
     private EntityManager entityManager;
 
 }
+

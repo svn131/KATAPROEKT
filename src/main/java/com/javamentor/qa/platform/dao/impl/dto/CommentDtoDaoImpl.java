@@ -28,3 +28,4 @@ public class CommentDtoDaoImpl implements CommentDtoDao {
                 .setParameter("questionId", questionId).getResultList();
     }
 }
+

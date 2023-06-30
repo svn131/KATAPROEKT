@@ -40,3 +40,4 @@ public class QuestionCommentDto {
     @Parameter(description = "reputation of creator user id")
     private Integer reputation;
 }
+

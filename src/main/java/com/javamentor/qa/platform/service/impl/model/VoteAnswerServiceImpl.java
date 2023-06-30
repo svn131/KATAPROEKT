@@ -55,3 +55,4 @@ public class VoteAnswerServiceImpl extends ReadWriteServiceImpl<VoteAnswer, Long
         return voteAnswerDao.getAllCurrentUserVotesOfAnswer(answerId, userId);
     }
 }
+

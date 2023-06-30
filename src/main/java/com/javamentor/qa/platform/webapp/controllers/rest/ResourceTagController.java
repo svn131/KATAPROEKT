@@ -35,3 +35,4 @@ public class ResourceTagController {
         return new ResponseEntity<>(tagDtoService.getTopTags(), HttpStatus.OK);
     }
 }
+

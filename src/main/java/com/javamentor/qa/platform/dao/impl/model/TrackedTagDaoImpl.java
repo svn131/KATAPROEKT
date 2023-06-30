@@ -15,3 +15,4 @@ public class TrackedTagDaoImpl extends ReadWriteDaoImpl<TrackedTag, Long> implem
     private EntityManager entityManager;
 
 }
+

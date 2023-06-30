@@ -12,3 +12,4 @@ public interface AnswerService extends ReadWriteService<Answer, Long> {
     Optional<Answer> getAnswerById(Long answerId, Long userId);
 
 }
+

@@ -10,3 +10,4 @@ public interface ReputationDao extends ReadWriteDao<Reputation, Long> {
 
     Long getReputationCount(Long id);
 }
+

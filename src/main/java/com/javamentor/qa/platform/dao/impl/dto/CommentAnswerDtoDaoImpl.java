@@ -13,3 +13,4 @@ public class CommentAnswerDtoDaoImpl implements CommentAnswerDtoDao {
     @PersistenceContext
     private EntityManager entityManager;
 }
+

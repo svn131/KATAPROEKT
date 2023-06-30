@@ -67,3 +67,4 @@ public class Message {
         return Objects.hash(id, message, lastRedactionDate, persistDate, userSender);
     }
 }
+

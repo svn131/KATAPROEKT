@@ -21,3 +21,4 @@ public class ReputationValidator implements ConstraintValidator<CombinedNotNullQ
                 && (reputation.getType() == ReputationType.Question || reputation.getType() == ReputationType.VoteQuestion);
     }
 }
+

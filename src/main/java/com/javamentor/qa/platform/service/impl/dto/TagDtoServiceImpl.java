@@ -19,3 +19,4 @@ public class TagDtoServiceImpl implements TagDtoService {
         return tagDtoDao.getTopTags();
     }
 }
+

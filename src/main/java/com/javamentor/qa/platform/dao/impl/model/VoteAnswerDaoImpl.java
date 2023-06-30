@@ -37,3 +37,4 @@ public class VoteAnswerDaoImpl extends ReadWriteDaoImpl<VoteAnswer, Long> implem
                 .setParameter("userId", userId).getResultStream().count();
     }
 }
+

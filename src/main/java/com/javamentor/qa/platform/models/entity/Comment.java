@@ -77,3 +77,4 @@ public class Comment implements Serializable {
         return Objects.hash(id, text, persistDateTime, lastUpdateDateTime);
     }
 }
+

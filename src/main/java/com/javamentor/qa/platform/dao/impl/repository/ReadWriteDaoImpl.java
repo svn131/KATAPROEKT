@@ -110,3 +110,4 @@ public abstract class ReadWriteDaoImpl<E, K> extends ReadOnlyDaoImpl<E, K> {
         }
     }
 }
+

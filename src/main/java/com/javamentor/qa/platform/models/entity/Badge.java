@@ -48,3 +48,4 @@ public class Badge implements Serializable {
         return getClass().hashCode();
     }
 }
+

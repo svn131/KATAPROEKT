@@ -32,3 +32,4 @@ public class CommentAnswerDaoImpl extends ReadWriteDaoImpl<CommentAnswer, Long> 
                 .getSingleResult();
     }
 }
+

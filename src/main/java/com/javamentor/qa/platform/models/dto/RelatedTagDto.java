@@ -19,3 +19,4 @@ public class RelatedTagDto {
     @Schema(description = "Количество вхождений")
     Long countQuestion;
 }
+

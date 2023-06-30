@@ -8,3 +8,4 @@ import java.util.List;
 public interface TagService extends ReadWriteService<Tag, Long> {
     List<Tag> pushTags(List<Tag> tags);
 }
+

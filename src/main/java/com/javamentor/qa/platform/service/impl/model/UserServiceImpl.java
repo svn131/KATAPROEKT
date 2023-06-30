@@ -33,3 +33,4 @@ public class UserServiceImpl extends ReadWriteServiceImpl<User, Long> implements
         return userDao.getByEmail(username).get();
     }
 }
+

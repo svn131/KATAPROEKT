@@ -26,3 +26,4 @@ public abstract class UserConverter {
     public abstract UserRegistrationDto userToUserRegistrationDto(User user);
 
 }
+

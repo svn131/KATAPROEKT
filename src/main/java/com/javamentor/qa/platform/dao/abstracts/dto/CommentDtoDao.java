@@ -9,3 +9,4 @@ public interface CommentDtoDao {
     List<QuestionCommentDto> getAllQuestionCommentDtoById(Long questionId);
 
 }
+

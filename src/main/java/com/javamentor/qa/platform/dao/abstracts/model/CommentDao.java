@@ -6,3 +6,4 @@ import com.javamentor.qa.platform.models.entity.Comment;
 
 public interface CommentDao extends ReadWriteDao<Comment, Long>{
 }
+

@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres
+    container_name: KATA_DB
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: stackover_kata
+      POSTGRES_USER: postgres
+    ports:
+      - "5433:5432"
+      -

@@ -60,3 +60,4 @@ public class ResourceQuestionController {
         return new ResponseEntity<>(questionService.getCountQuestion(), HttpStatus.OK);
     }
 }
+

@@ -37,3 +37,4 @@ public class ReputationDaoImpl extends ReadWriteDaoImpl<Reputation, Long> implem
     }
 
 }
+

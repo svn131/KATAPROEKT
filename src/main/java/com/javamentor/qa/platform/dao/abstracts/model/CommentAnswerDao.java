@@ -7,3 +7,4 @@ import com.javamentor.qa.platform.models.entity.question.answer.CommentAnswer;
 public interface CommentAnswerDao extends ReadWriteDao<CommentAnswer, Long> {
     CommenAnswerDto toDto(CommentAnswer commentAnswer, Long userId);
 }
+

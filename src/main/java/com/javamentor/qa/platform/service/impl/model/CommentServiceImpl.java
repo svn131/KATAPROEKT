@@ -15,3 +15,4 @@ public class CommentServiceImpl extends ReadWriteServiceImpl<Comment, Long> impl
     }
 
 }
+

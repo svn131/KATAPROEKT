@@ -59,3 +59,4 @@ public class UserFavoriteQuestion implements Serializable {
         return getClass().hashCode();
     }
 }
+

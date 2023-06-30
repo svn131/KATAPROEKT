@@ -4,3 +4,4 @@ public enum VoteType {
     UP,
     DOWN,
 }
+

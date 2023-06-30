@@ -11,3 +11,4 @@ public interface CommentAnswerService extends ReadWriteService<CommentAnswer, Lo
 
     CommenAnswerDto toDto(CommentAnswer commentAnswer);
 }
+

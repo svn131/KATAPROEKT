@@ -11,3 +11,4 @@ public interface VoteAnswerDao extends ReadWriteDao<VoteAnswer, Long> {
 
     Long getAllCurrentUserVotesOfAnswer(Long answerId, Long userId);
 }
+

@@ -13,3 +13,4 @@ public class IgnoredTagServiceImpl extends ReadWriteServiceImpl<IgnoredTag, Long
         super(readWriteDao);
     }
 }
+

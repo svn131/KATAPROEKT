@@ -40,3 +40,4 @@ public abstract class ReadOnlyServiceImpl<E, K> {
         return readOnlyDao.existsByAllIds(ids);
     }
 }
+

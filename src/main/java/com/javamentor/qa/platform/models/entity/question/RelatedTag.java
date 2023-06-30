@@ -49,3 +49,4 @@ public class RelatedTag implements Serializable {
         return getClass().hashCode();
     }
 }
+

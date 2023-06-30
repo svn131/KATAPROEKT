@@ -68,3 +68,4 @@ public class VoteAnswer {
         return getClass().hashCode();
     }
 }
+

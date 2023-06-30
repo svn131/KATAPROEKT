@@ -13,3 +13,4 @@ public class VoteQuestionServiceImpl extends ReadWriteServiceImpl<VoteQuestion, 
         super(readWriteDao);
     }
 }
+

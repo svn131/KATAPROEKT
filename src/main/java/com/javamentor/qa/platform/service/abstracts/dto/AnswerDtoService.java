@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface AnswerDtoService {
-    Optional<Optional<List<AnswerDto>>> getAllAnswersDtoByQuestionId(Long id, Long userId);
+    Optional<List<AnswerDto>> getAllAnswersDtoByQuestionId(Long id, Long userId);
 }
+
 
 

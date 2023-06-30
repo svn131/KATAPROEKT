@@ -79,3 +79,4 @@ public class VoteQuestion implements Serializable {
         return getClass().hashCode();
     }
 }
+

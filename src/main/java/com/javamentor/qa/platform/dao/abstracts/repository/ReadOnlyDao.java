@@ -19,3 +19,4 @@ public interface    ReadOnlyDao<E, K> {
 
     Optional<User> getByEmail(String email);
 }
+

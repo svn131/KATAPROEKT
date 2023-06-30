@@ -9,3 +9,4 @@ public class ApiRequestException extends RuntimeException {
         super(message);
     }
 }
+
